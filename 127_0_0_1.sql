@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Oct 19, 2026 at 04:11 PM
--- Server version: 8.4.3
--- PHP Version: 7.4.33
+-- Host: 127.0.0.1
+-- Generation Time: Oct 19, 2026 at 06:42 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pwb_2422500018`
+-- Database: `pwb_2422500035`
 --
+CREATE DATABASE IF NOT EXISTS `pwb_2422500035` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `pwb_2422500035`;
 
 -- --------------------------------------------------------
 
@@ -28,18 +31,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `administrator` (
-  `id_name` int NOT NULL,
+  `id_admin` int(11) NOT NULL,
   `full_name` varchar(40) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `administrator`
 --
 
-INSERT INTO `administrator` (`id_name`, `full_name`, `username`, `password`) VALUES
-(1, 'Muhamat Boncel Permana', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `administrator` (`id_admin`, `full_name`, `username`, `password`) VALUES
+(1, 'Eza Rizky Saputra', 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -48,18 +51,18 @@ INSERT INTO `administrator` (`id_name`, `full_name`, `username`, `password`) VAL
 --
 
 CREATE TABLE `kategori` (
-  `id_kategori` int NOT NULL,
+  `id_kategori` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `deskripsi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama`, `deskripsi`) VALUES
-(4, 'Baju Koko', 'Baju yang digunakan lebaran fitri'),
-(5, 'Celana Baggy Jeans', 'Celana dengan cutting gombrong');
+(0, 'Jersey Bola', 'Jersey Bola Dewasa'),
+(2, '5 baju anak', 'baju anak 1-5 tahun');
 
 -- --------------------------------------------------------
 
@@ -68,20 +71,20 @@ INSERT INTO `kategori` (`id_kategori`, `nama`, `deskripsi`) VALUES
 --
 
 CREATE TABLE `produk` (
-  `id_produk` int NOT NULL,
-  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `deskripsi` text,
-  `categori_id` int NOT NULL,
-  `harga` int NOT NULL,
-  `stok` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `categori_id` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `stok` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `nama`, `deskripsi`, `categori_id`, `harga`, `stok`) VALUES
-(4, 'Baju Koko Dewasa', 'Baju Koko Lengan Panjang(Lemited edition)', 4, 1999000, 10);
+(0, 'Jersey Bola Dewasa', 'Jersey Bola stok terbatas', 0, 150000, 20);
 
 -- --------------------------------------------------------
 
@@ -90,17 +93,17 @@ INSERT INTO `produk` (`id_produk`, `nama`, `deskripsi`, `categori_id`, `harga`, 
 --
 
 CREATE TABLE `produk_gambar` (
-  `id_gambar` int NOT NULL,
-  `nama_gambar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `produk_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id_gambar` int(11) NOT NULL,
+  `nama_gambar` varchar(100) DEFAULT NULL,
+  `produk_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `produk_gambar`
 --
 
 INSERT INTO `produk_gambar` (`id_gambar`, `nama_gambar`, `produk_id`) VALUES
-(8, 'produk-4-6ad63cbec3076.jpeg', 4);
+(0, 'produk-0-6ad648124aee6.jpeg', 0);
 
 --
 -- Indexes for dumped tables
@@ -110,7 +113,7 @@ INSERT INTO `produk_gambar` (`id_gambar`, `nama_gambar`, `produk_id`) VALUES
 -- Indexes for table `administrator`
 --
 ALTER TABLE `administrator`
-  ADD PRIMARY KEY (`id_name`);
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indexes for table `kategori`
@@ -140,25 +143,7 @@ ALTER TABLE `produk_gambar`
 -- AUTO_INCREMENT for table `administrator`
 --
 ALTER TABLE `administrator`
-  MODIFY `id_name` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `kategori`
---
-ALTER TABLE `kategori`
-  MODIFY `id_kategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `produk`
---
-ALTER TABLE `produk`
-  MODIFY `id_produk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `produk_gambar`
---
-ALTER TABLE `produk_gambar`
-  MODIFY `id_gambar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
