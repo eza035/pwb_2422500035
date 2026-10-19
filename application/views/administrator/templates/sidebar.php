@@ -39,12 +39,17 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
+<<<<<<< HEAD
                 Master
+=======
+                Starter Pages
+>>>>>>> 2452377a967a3ab2d5fac344329b0534a88b9fc7
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="<?= base_url() ?>admin/kategori" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori</p>
@@ -54,6 +59,17 @@
                 <a href="<?= base_url() ?>admin/produk" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Produk</p>
+=======
+                <a href="#" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Active Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inactive Page</p>
+>>>>>>> 2452377a967a3ab2d5fac344329b0534a88b9fc7
                 </a>
               </li>
             </ul>

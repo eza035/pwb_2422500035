@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'administrator/Admin_dashboard_controller/index';
 $route['admin/login'] = 'administrator/admin_auth_controller/index';
+<<<<<<< HEAD
 $route['admin/logout'] = 'administrator/admin_auth_controller/logout';
 
 #admin kategori
@@ -72,3 +73,6 @@ $route['admin/produk/hapus/(:num)'] = 'administrator/Produk_controller/hapus_pro
 
 $route['admin/produk/hapus_gambar/(:num)/(:num)'] =
     'administrator/Produk_controller/hapus_gambar/$1/$2';
+=======
+$route['admin/logout'] = 'administrator/admin_auth_controller/logout';
+>>>>>>> 2452377a967a3ab2d5fac344329b0534a88b9fc7
