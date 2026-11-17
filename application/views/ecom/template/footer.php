@@ -67,7 +67,7 @@
 
 <script src="<?= base_url() ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="<?= base_url() ?>assets/js/scripts.js"></script>
-<script type="<?= base_url() ?>assets/text/javascript" src="plugins/slick/slick.min.js"></script>
+<script src="<?= base_url() ?>assets/plugins/slick/slick.min.js"></script>
 
 </body>
 
