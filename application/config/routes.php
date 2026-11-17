@@ -55,7 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'administrator/Admin_dashboard_controller/index';
 $route['admin/login'] = 'administrator/admin_auth_controller/index';
-<<<<<<< HEAD
+
 $route['admin/logout'] = 'administrator/admin_auth_controller/logout';
 
 #admin kategori
@@ -73,6 +73,17 @@ $route['admin/produk/hapus/(:num)'] = 'administrator/Produk_controller/hapus_pro
 
 $route['admin/produk/hapus_gambar/(:num)/(:num)'] =
     'administrator/Produk_controller/hapus_gambar/$1/$2';
-=======
+
 $route['admin/logout'] = 'administrator/admin_auth_controller/logout';
->>>>>>> 2452377a967a3ab2d5fac344329b0534a88b9fc7
+#kota2422500035
+$route['admin/kota2422500035'] = 'administrator/kota2422500035_controller/index';
+$route['admin/kota2422500035/tambah'] = 'administrator/kota2422500035_controller/tambah_kota2422500035';
+$route['admin/kota2422500035/hapus/(:num)'] = 'administrator/kota2422500035_controller/hapus_kota2422500035/$1';
+$route['admin/kota2422500035/ubah/(:num)'] = 'administrator/kota2422500035_controller/ubah_kota2422500035/$1';
+
+#pelanggan
+$route['login'] = 'pelanggan_controller/login';
+$route['register'] = 'pelanggan_controller/register';
+$route['logout'] = 'pelanggan_controller/logout';
+
+$route['profil'] = 'pelanggan_controller/profil';
